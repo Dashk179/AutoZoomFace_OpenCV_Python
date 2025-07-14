@@ -38,10 +38,13 @@ while True:
 
         # Add padding around the face
         padding = 60
+        padding_top = 80
+        padding_bottom = 140
+
         x1 = max(prev_x - padding, 0)
-        y1 = max(prev_y - padding, 0)
+        y1 = max(prev_y - padding_top, 0)
         x2 = min(prev_x + prev_w + padding, frame.shape[1])
-        y2 = min(prev_y + prev_h + padding, frame.shape[0])
+        y2 = min(prev_y + prev_h + padding_bottom, frame.shape[0])
 
         # Zoom into the face region
         face_zoom = frame[y1:y2, x1:x2]
